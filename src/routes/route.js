@@ -8,7 +8,7 @@ const lodash= require('lodash')
 //const underscore = require('underscore')
 const abc=require('../logger/logger')
 const def=require('../util/helper')
-const ghi=require('../validatro/formatter')
+const ghi=require('../validator/formatter')
 
 // router.get('/test-me', function (req, res) {
 //     //Calling the components of a different custom module
