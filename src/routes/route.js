@@ -1,6 +1,7 @@
 const express = require('express');
 const myHelper = require('../util/helper')
-const underscore = require('underscore')
+const underscore = require('underscore');
+const { result } = require('underscore');
 
 const router = express.Router();
 
@@ -108,6 +109,55 @@ router.get("/films/:filmId", function(req, res){
        res.send("The film id doesn't match any movie")
 })
 
+//problem no 1
+router.get('/solution1',function(req,res){
+let arr=[1,2,3,5,6]
+let sum=0
+for (let i=0;i<arr.length;i++){
+    sum=sum+arr[i]
+}
+let n=arr.length+1;
+let sum2=((n*(n+1))/2);
+let ans=sum2-sum;
+console.log(ans)
+res.send("my first ever api")
+});
+
+
+
+
+//question no 2
+router.get('/solution2',function(req,res){
+    let arr=[33,34,35,37,38]
+    let sum =0;
+    for(let i=0;i<arr.length;i++){
+        sum=sum+arr[i]
+    }
+    let no=38
+    let sum2=((no*(no+1))/2)
+    let no2=32
+    let sum3=((no2*(no2+1))/2)
+  let rest =sum2-sum3;
+   let  final = rest-sum;
+    console.log(final)
+    res.send("my send ever api")
+
+})
 module.exports = router;
+
+//problem no 2
+router.get('/sol2',function(req,res){
+    let array=[33,34,35,37,38]
+    let sm=0
+    for(let i=0;i<array.length;i++){
+        sm=sm+array[i];
+    }
+    let no7=array.length+1
+    let sm2=((no7*(array[0]+array[4]))/2)
+    let w=sm2-sm
+    console.log(w)
+    res.send("my 2nd api")
+})
+
 // adding this comment for no reason
 //
