@@ -148,7 +148,7 @@ router.post( "/post-query-1", function (req, res){
 //filter out all the numbers that are greater than "input" ( input is received from query params)
 let myArr = [23, 45, 67, 281394, 32424, 423, 24, 42323, 4, 234, 12, 34]
 
-router.post( "/post-query-2", function (req, res){
+router.get( "/post-query-2", function (req, res){
     let input= req.query.input
 
     // let finArr= myArr.filter ( ele => ele>input )
@@ -157,6 +157,45 @@ router.post( "/post-query-2", function (req, res){
         if ( myArr[i] > input )     finalArr.push( myArr[i])
     }
     res.send( {data: finalArr , status: true})
+})
+
+let persons = [
+    {
+    name: "PK",
+    age: 10,
+    votingStatus: false
+ },
+ {
+    name: "SK",
+    age: 20,
+    votingStatus: false
+ },
+ {
+    name: "AA",
+    age: 70,
+    votingStatus: false
+ },
+ {
+    name: "SC",
+    age: 5,
+    votingStatus: false
+ },
+ {
+    name: "HO",
+    age: 40,
+    votingStatus: false
+ }
+ ]
+router.post('/req-1',function(req,res){
+    let newage=req.query.age
+    let resultarr=persons.filter(x=>x.age>newage)
+    for(let i=0;i<resultarr.length;i++){
+        resultarr[i].votingStatus=true;
+
+    }
+    console.log(resultarr)
+    res.send({data:resultarr})
+
 })
 
 
